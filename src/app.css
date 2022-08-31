@@ -1,0 +1,92 @@
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+section{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin: auto;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(90deg,rgb(255, 187, 0),rgb(255, 85, 0));
+  border-radius: 30px;
+}
+section::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background: url("../public/images/alarmClockSmall.png") no-repeat;
+  background-size: cover;
+}
+.clock,.offer{
+  display: flex;
+  align-items: center;
+}
+.clock{
+  width: 90%;
+  justify-content: space-between;
+}
+.offer p:first-child{
+  margin-right: 10px;
+}
+@media(max-width:800px){
+  section{
+      padding: 10px 0;
+      border-radius: 10px;
+      background: none;
+      background-color: rgb(252, 212, 159);
+      border: 2px solid orange;
+  }
+  section::after{
+      display: none;
+  }
+  .clock,.offer{
+      width: 100%;
+  }
+  .clock{
+      flex-direction: column;
+  }
+  #firstP{
+      position: relative;
+  }
+  #firstP::before,#firstP::after{
+      content: "";
+      position: absolute;
+  }
+  #firstP::after{
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 0.5px;
+      background-color: rgba(0, 0, 0, 0.344);
+  }
+  #firstP::before{
+      top: 50%;
+      right: 100%;
+      transform: translateY(-50%);
+      width: 60px;
+      height: 60px;
+      background: url("../public/images/alarmClock.png") no-repeat;
+      background-size: cover;
+  }
+  .offerContainer{
+      width: 100%;
+      background-color: orange;
+  }
+  .offer{
+      max-width: 300px;
+      margin: auto;
+      justify-content: space-around;
+  }
+}
